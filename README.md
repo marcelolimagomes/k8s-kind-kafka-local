@@ -103,6 +103,41 @@ Após a implantação, o Kafka UI estará disponível via NodePort ou Ingress, c
 - **NodePort:** http://localhost:30080
 - **Ingress:** http://kafka-ui.localdev.me (configure seu `/etc/hosts` se necessário)
 
+## Limpeza do ambiente
+
+### Removendo o cluster kind
+
+Para remover completamente o cluster kind e limpar os recursos do Docker:
+
+```sh
+# Remove o cluster kind (substitua 'kind' pelo nome do seu cluster se for diferente)
+kind delete cluster
+
+# Ou para remover um cluster específico por nome
+kind delete cluster --name nome-do-cluster
+
+# Para listar todos os clusters kind existentes
+kind get clusters
+
+# Para remover todos os clusters kind
+kind delete clusters --all
+```
+
+### Verificando a remoção
+
+Após executar o comando, você pode verificar se o cluster foi removido:
+
+```sh
+# Verifica se ainda existem clusters kind
+kind get clusters
+
+# Verifica se os containers Docker foram removidos
+docker ps -a | grep kind
+
+# Lista contextos do kubectl (o contexto do kind deve ter sido removido)
+kubectl config get-contexts
+```
+
 ## Contribuições
 
 Este projeto é aberto à comunidade! Sinta-se à vontade para sugerir melhorias, reportar problemas ou enviar pull requests. Toda contribuição é bem-vinda para evoluirmos juntos este ambiente de testes.
