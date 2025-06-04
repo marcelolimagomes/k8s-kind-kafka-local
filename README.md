@@ -47,7 +47,7 @@ O **Apache Kafka** é uma plataforma distribuída de streaming de eventos, proje
 
 ## Passo a passo para configuração do ambiente
 
-## Clonando o projeto
+### 1. Clonando o projeto
 
 Para começar, clone este repositório em sua máquina local:
 
@@ -56,15 +56,7 @@ git clone https://github.com/marcelolimagomes/k8s-kind-kafka-local.git
 cd k8s-kind-kafka-local
 ```
 
-### 1. Instale o kubectl
-
-Utilize o script fornecido para instalar o `kubectl`:
-
-```sh
-./scripts/install-kubectl.sh
-```
-
-### 2. Instale o kind
+### 2. Instale o kubectl e o kind
 
 Utilize o script fornecido para instalar o `kind`:
 
